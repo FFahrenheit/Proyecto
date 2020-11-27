@@ -72,6 +72,13 @@ def nuevoEjercicio():
 def calcular(data,polynomials):
     print("\t\tMinimos cuadrados\n\n")
 
+    print("Valores\n")
+
+    for valor in data:
+        print(f"x = {valor[0]} , y = {valor[1]}")
+
+    print("")
+
 
     xSum = [0 for i in range(2*polynomials)]
     xYSum = [0 for i in range(polynomials+1)]

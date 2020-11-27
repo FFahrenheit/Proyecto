@@ -98,7 +98,7 @@ def calcular(a,b,n,data):
         y = data[i]
         print(f"x = {x} , y = {y}")
 
-    print("*"*10,"Trapecio compuesto","*"*10)
+    print("\n","*"*10,"Trapecio compuesto","*"*10)
     getCompositeTrapeze(data,h)
 
     print("*"*10,"Simpson 1/3 compuesto","*"*10)

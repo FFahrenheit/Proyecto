@@ -68,6 +68,8 @@ def calcular(edo,x0,y0,xf,n):
     h = round((xf-x0)/n,epsilon)
 
     print("EDO: ",edo)
+    print(f"f({x0}) = {y0}")
+    print(f"f({xf}) = ?\n")
     print(f"h = ({xf}-{x0})/{n}")
     print(f"h = {h}")
 

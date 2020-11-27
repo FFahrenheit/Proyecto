@@ -74,6 +74,12 @@ def guardarEjercicio(value,data,filename):
 def calcular(data, value):
     print("\t\tDiferencias finitas\n\n")
 
+    print("Datos: ")
+    for valor in data:
+        print(f"x = {valor[0]} , y = {valor[1]}")
+
+    print(f"Valor a interpolar: {value}\n\n")
+   
     dif = getFiniteDifferences(data)
 
     n = len(data)

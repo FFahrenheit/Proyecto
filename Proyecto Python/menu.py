@@ -117,18 +117,21 @@ def solucionador():
 
         opcion = str(input("Ingrese su eleccion: ")).upper()
 
-        if opcion == "A":
-            ajuste.nuevoEjercicio()
-        elif opcion == "B":
-            interpolar.nuevoEjercicio()
-        elif opcion == "C":
-             integrar.nuevoEjercicio()
-        elif opcion == "D":
-            edo.nuevoEjercicio()
-        elif opcion == "E":
-            return
-        else:
-            print("Seleccione una opcion valida")
+        try:
+            if opcion == "A":
+                ajuste.nuevoEjercicio()
+            elif opcion == "B":
+                interpolar.nuevoEjercicio()
+            elif opcion == "C":
+                integrar.nuevoEjercicio()
+            elif opcion == "D":
+                edo.nuevoEjercicio()
+            elif opcion == "E":
+                return
+            else:
+                print("Seleccione una opcion valida")
+        except:
+            print("La informacion proporcionada genero un error")
 
         os.system("pause")
 
