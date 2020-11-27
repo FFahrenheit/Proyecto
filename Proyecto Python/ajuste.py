@@ -133,11 +133,13 @@ def getEquation(order,n,xSum,terms):
         print(f"{data[i]:.4f}a{i}",end='')
     return data 
 
+
 def getSumXY(data,pow):
     total = 0
     for i in range(len(data)):
         total += data[i][0]**pow *data[i][1]
     return round(total,epsilon)
+
 
 def getSummatory(data,pow):
     total = 0

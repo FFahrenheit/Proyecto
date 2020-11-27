@@ -17,13 +17,19 @@ TEMAS APLICADOS:
             *Try - except
             *Variables y tipos de dato (cast)
             *Manejo de cadenas
+            *Funciones
 """
 
-import ajuste
-import interpolar 
-import integrar
-import edo 
+import ajuste         #Ajute
+import interpolar     #Interpolar
+import integrar       #Integrales
+import edo            #Ecuaciones
 
+"""
+edo.cargarEjemplo()    ->Ejemplo 
+edo.nuevoEjercicio()   ->Solucionador
+edo.leerEjercicio()    ->Leer ejercicio
+"""
 
 def main():
     print("Hola mundo!")
@@ -38,6 +44,11 @@ def main():
         o Ejemplo interpolación (información cargada de archivo).
         o Ejemplo ajuste de curva (información cargada de archivo).
     • Solucionador:
+        o Ecuaciones diferenciales ordinarias.
+        o Cálculo integral
+        o Interpolación y ajuste de curva.
+        o Ajuste de curva
+    • Cargar ejercicio:
         o Ecuaciones diferenciales ordinarias.
         o Cálculo integral
         o Interpolación y ajuste de curva.
