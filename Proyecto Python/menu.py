@@ -31,7 +31,7 @@ edo.nuevoEjercicio()   ->Solucionador
 edo.leerEjercicio()    ->Leer ejercicio
 """
 
-def main():
+def mainMenu():
     print("Hola mundo!")
     """
     El MENU IRÁ ASÍ:
@@ -57,4 +57,4 @@ def main():
 
 
 if __name__ == "__main__":
-	main()
+	mainMenu()

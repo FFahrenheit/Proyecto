@@ -23,10 +23,10 @@ def cargarEjemplo(filename = "edo",isSave = False):
     datos = file.read().split("\n")
 
     edo = datos[0]
-    x0 = datos[1]
-    y0 = datos[2]
-    xf = datos[3]
-    n = datos[4]
+    x0 = float(datos[1])
+    y0 = float(datos[2])
+    xf = float(datos[3])
+    n = int(datos[4])
 
     calcular(edo,x0,y0,xf,n)
 
@@ -67,6 +67,7 @@ def calcular(edo,x0,y0,xf,n):
     
     h = round((xf-x0)/n,epsilon)
 
+    print("EDO: ",edo)
     print(f"h = ({xf}-{x0})/{n}")
     print(f"h = {h}")
 

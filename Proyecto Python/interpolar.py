@@ -24,13 +24,13 @@ def cargarEjemplo(filename="interpolar",isSave=False):
 
     text = file.read().split("\n")
 
-    value = text[0]
+    value = float(text[0])
 
     data = []
 
     for i in range(1,len(text)):
         vals = text[i].split("|")
-        data.append( [vals[0], vals[1]])
+        data.append( [float(vals[0]), float(vals[1])])
 
     calcular(data,value)
     file.close()

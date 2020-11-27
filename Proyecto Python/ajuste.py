@@ -29,7 +29,7 @@ def cargarEjemplo(filename="ajuste",isSave=False):
 
     for dato in datos:
         valores = dato.split("|")
-        data.append([valores[0] , valores[1]])
+        data.append([float(valores[0]) , float(valores[1])])
 
     calcular(data, len(data)-1)
     file.close()

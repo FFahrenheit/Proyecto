@@ -8,7 +8,6 @@ import math
 import archivos
 import validador
 
-
 def leerEjercicio():
     try:
         filename = input("Ingrese el nombre del archivo a cargar ejemplo: ")
@@ -28,14 +27,14 @@ def cargarEjemplo(filename="integrar",isSave=False):
 
     headers = datos[0].split("|")
 
-    a = headers[0]
-    b = headers[1]
-    n = headers[1]
+    a = float(headers[0])
+    b = float(headers[1])
+    n = int(headers[1])
     
     data = []
 
     for i in range(1,len(datos)):
-        data.append(datos[i])
+        data.append(float(datos[i]))
 
     calcular(a,b,n,data)
     file.close()
@@ -164,4 +163,3 @@ def getSimpson3over8(data,h):
     total = round(3/8*total*h,epsilon)
     print(total)
     return total
-
