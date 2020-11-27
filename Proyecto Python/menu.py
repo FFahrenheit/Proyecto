@@ -17,7 +17,8 @@ TEMAS APLICADOS:
             *Try - except
             *Variables y tipos de dato (cast)
             *Manejo de cadenas
-            *Funciones
+            *Funciones (con paso, sin paso, return, default...)
+            *Funciones de libreria
 """
 
 import ajuste         #Ajute
@@ -51,9 +52,19 @@ def mainMenu():
         elif opcion == "B":
             datos()
         elif opcion == "C":
-            ejemplos()
-
+            ejemplos()   
+        elif opcion == "D":
+            solucionador()
+        elif opcion == "E":
+            ejercicio()
+        elif opcion == "F":
+            print("Gracias por usar este programa")
+            return
+        else:
+            print("Seleccione una opcion valida")
+       
         os.system("pause")
+
 
 def ejemplos():
     while True:
@@ -71,16 +82,84 @@ def ejemplos():
             ajuste.cargarEjemplo()
         elif opcion == "B":
             interpolar.cargarEjemplo()
+        elif opcion == "C":
+             integrar.cargarEjemplo()
+        elif opcion == "D":
+            edo.cargarEjemplo()
         elif opcion == "E":
             return
+        else:
+            print("Seleccione una opcion valida")
 
         os.system("pause")
 
 def integrantes():
-    print("Aqui imprime nuestros nombres")
-
+    print("Los integrantes del equipo son: ")
+    print("Ismael Iván López Murillo")
+    print("Edgar Manuel Cabral Serpa")
+    print("María José Rangel Salmerón")
 def datos():
-    print("Aqui imprime los datos")
+    print("Materia: Fundamentos Filosóficos de la Computación")
+    print("Sección: D07")
+    print("Profesor: Conrado Cruz Gomez")
+    print("Proyecto Final")
+    print("Fecha: 27/11/2020")
 
+def solucionador():
+    while True:
+        os.system("cls")
+        print("SOLUCIONADOR")
+        print("\tA: Ajuste de curva")
+        print("\tB: Interpolar valor")
+        print("\tC: Integrar numericamente")
+        print("\tD: Ecuacion diferencial")
+        print("\tE: Salir")
+
+        opcion = str(input("Ingrese su eleccion: ")).upper()
+
+        if opcion == "A":
+            ajuste.nuevoEjercicio()
+        elif opcion == "B":
+            interpolar.nuevoEjercicio()
+        elif opcion == "C":
+             integrar.nuevoEjercicio()
+        elif opcion == "D":
+            edo.nuevoEjercicio()
+        elif opcion == "E":
+            return
+        else:
+            print("Seleccione una opcion valida")
+
+        os.system("pause")
+
+
+def ejercicio():
+    while True:
+        os.system("cls")
+        print("Cargar Ejercicios")
+        print("\tA: Ajuste de curva")
+        print("\tB: Interpolar valor")
+        print("\tC: Integrar numericamente")
+        print("\tD: Ecuacion diferencial")
+        print("\tE: Salir")
+                
+        opcion = str(input("Ingrese su eleccion: ")).upper()
+
+        if opcion == "A":
+            ajuste.leerEjercicio()
+        elif opcion == "B":
+            interpolar.leerEjercicio()
+        elif opcion == "C":
+             integrar.leerEjercicio()
+        elif opcion == "D":
+            edo.leerEjercicio()
+        elif opcion == "E":
+            return
+        else:
+            print("Seleccione una opcion valida")
+
+        os.system("pause")   
+
+              
 if __name__ == "__main__":
 	mainMenu()
