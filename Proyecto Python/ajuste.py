@@ -147,5 +147,3 @@ def getSummatory(data,pow):
     for i in range(len(data)):
         total += data[i][0]**pow
     return round(total,epsilon)
-
-leerEjercicio()

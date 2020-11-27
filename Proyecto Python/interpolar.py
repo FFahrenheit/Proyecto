@@ -185,7 +185,3 @@ def printMatrix(data):
         for j in range(len(data[0])):
             print("%f"%data[i][j],end='\t')
         print("\n") 
-
-#cargarEjemplo()
-nuevoEjercicio()
-leerEjercicio()

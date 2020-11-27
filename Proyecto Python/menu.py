@@ -24,6 +24,7 @@ import ajuste         #Ajute
 import interpolar     #Interpolar
 import integrar       #Integrales
 import edo            #Ecuaciones
+import os
 
 """
 edo.cargarEjemplo()    ->Ejemplo 
@@ -32,29 +33,54 @@ edo.leerEjercicio()    ->Leer ejercicio
 """
 
 def mainMenu():
-    print("Hola mundo!")
-    """
-    El MENU IRÁ ASÍ:
-    • Bienvenida.
-        o Mostrar Integrantes.
-        o Mostrar datos del programa.
-    • Ejemplos.
-        o Ejemplo ecuaciones diferenciales (información cargada de archivo).
-        o Ejemplo cálculo integral (información cargada de archivo).
-        o Ejemplo interpolación (información cargada de archivo).
-        o Ejemplo ajuste de curva (información cargada de archivo).
-    • Solucionador:
-        o Ecuaciones diferenciales ordinarias.
-        o Cálculo integral
-        o Interpolación y ajuste de curva.
-        o Ajuste de curva
-    • Cargar ejercicio:
-        o Ecuaciones diferenciales ordinarias.
-        o Cálculo integral
-        o Interpolación y ajuste de curva.
-        o Ajuste de curva
-    """
+    opcion = "A"
+    while opcion != "F":
+        os.system("cls")
+        print("Bienvenido")
+        print("\tA: Integrantes")
+        print("\tB: Datos del programa")
+        print("\tC: Ejemplos")
+        print("\tD: Solucionador")
+        print("\tE: Cargar ejercicio desde archivo")
+        print("\tF: Salir")
 
+        opcion = str(input("Ingrese su eleccion: ")).upper()
+
+        if opcion == "A":
+            integrantes()
+        elif opcion == "B":
+            datos()
+        elif opcion == "C":
+            ejemplos()
+
+        os.system("pause")
+
+def ejemplos():
+    while True:
+        os.system("cls")
+        print("EJEMPLOS")
+        print("\tA: Ajuste de curva")
+        print("\tB: Interpolar valor")
+        print("\tC: Integrar numericamente")
+        print("\tD: Ecuacion diferencial")
+        print("\tE: Salir")
+
+        opcion = str(input("Ingrese su eleccion: ")).upper()
+
+        if opcion == "A":
+            ajuste.cargarEjemplo()
+        elif opcion == "B":
+            interpolar.cargarEjemplo()
+        elif opcion == "E":
+            return
+
+        os.system("pause")
+
+def integrantes():
+    print("Aqui imprime nuestros nombres")
+
+def datos():
+    print("Aqui imprime los datos")
 
 if __name__ == "__main__":
 	mainMenu()
