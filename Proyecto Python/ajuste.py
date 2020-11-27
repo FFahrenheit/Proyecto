@@ -24,7 +24,8 @@ def cargarEjemplo(filename="ajuste",isSave=False):
         file = archivos.leerArchivo(filename)
     
     datos = file.read().split("\n")
-
+    datos.pop()
+    
     data = []
 
     for dato in datos:
@@ -39,7 +40,7 @@ def guardarEjercicio(data,filename):
     file = archivos.guardarArchivo(filename)
 
     for dato in data:
-        file.write(f"{dato[0]}|{dato[1]}")
+        file.write(f"{dato[0]}|{dato[1]}\n")
 
     file.close()
 
@@ -51,7 +52,7 @@ def nuevoEjercicio():
     data = []
     for i in range(n):
         x = validador.requestReal(f"Ingrese el valor para x{i}: ")
-        y = validador.requestReal(f"Ingrese el valor para f(x{i}): ")
+        y = validador.requestReal(f"Ingrese el valor para f({x}): ")
         data.append([x,y])
 
     polinomios = validador.requestInt("Ingrese los polinomios a calcular: ")
@@ -146,3 +147,5 @@ def getSummatory(data,pow):
     for i in range(len(data)):
         total += data[i][0]**pow
     return round(total,epsilon)
+
+leerEjercicio()

@@ -24,12 +24,13 @@ def cargarEjemplo(filename="integrar",isSave=False):
         file = archivos.leerArchivo("integrar")
 
     datos = file.read().split("\n")
+    datos.pop()
 
     headers = datos[0].split("|")
 
     a = float(headers[0])
     b = float(headers[1])
-    n = int(headers[1])
+    n = int(headers[2])
     
     data = []
 
@@ -42,10 +43,10 @@ def cargarEjemplo(filename="integrar",isSave=False):
 def guardarEjercicio(a,b,h,data,filename):
     file = archivos.guardarArchivo(filename)
 
-    file.write(f"{a}|{b}|{h}")
+    file.write(f"{a}|{b}|{h}\n")
 
     for dato in data:
-        file.write(dato)
+        file.write(f"{dato}\n")
 
     file.close()
 
@@ -54,7 +55,7 @@ def guardarEjercicio(a,b,h,data,filename):
 def nuevoEjercicio():
     limits = validador.requestLimits("Ingrese los limites de integracion: ")
 
-    n = validador.requestLimits("Ingrese cuantos subintervalos tiene: ")
+    n = validador.requestInt("Ingrese cuantos subintervalos tiene: ")
     fun = input("Ingrese la funcion a tabular en terminos de x y sintaxis python: ")
 
     h = (limits[0] - limits[1])/n
@@ -70,7 +71,7 @@ def nuevoEjercicio():
         try:
             x = 1
             eval(fun)
-            for i in range(n):
+            for i in range(n+1):
                 x = limits[0] + h*i
                 y = eval(fun)
                 data.append(y)
@@ -163,3 +164,4 @@ def getSimpson3over8(data,h):
     total = round(3/8*total*h,epsilon)
     print(total)
     return total
+

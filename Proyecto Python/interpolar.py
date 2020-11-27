@@ -23,6 +23,7 @@ def cargarEjemplo(filename="interpolar",isSave=False):
         file = archivos.leerArchivo(filename)
 
     text = file.read().split("\n")
+    text.pop()
 
     value = float(text[0])
 
@@ -62,10 +63,10 @@ def nuevoEjercicio():
 def guardarEjercicio(value,data,filename):
     file = archivos.guardarArchivo(filename)
 
-    file.write(value)
+    file.write(str(value)+"\n")
 
     for dato in data:
-        file.write(f"{dato[0]}|{dato[1]}")
+        file.write(f"{dato[0]}|{dato[1]}\n")
 
     file.close()
 
@@ -184,3 +185,7 @@ def printMatrix(data):
         for j in range(len(data[0])):
             print("%f"%data[i][j],end='\t')
         print("\n") 
+
+#cargarEjemplo()
+nuevoEjercicio()
+leerEjercicio()

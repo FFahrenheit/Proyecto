@@ -52,11 +52,11 @@ def nuevoEjercicio():
 def guardarEjercicio(edo,x0,y0,xf,n,filename):
     file = archivos.guardarArchivo(filename)
 
-    file.write(edo)
-    file.write(x0)
-    file.write(y0)
-    file.write(xf)
-    file.write(n)
+    file.write(f"{edo}\n")
+    file.write(f"{x0}\n")
+    file.write(f"{y0}\n")
+    file.write(f"{xf}\n")
+    file.write(f"{n}\n")
 
     file.close()
 
